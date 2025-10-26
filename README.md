@@ -2,8 +2,8 @@
 
 A Retrieval-Augmented Generation chat system powered by Google Gemini AI. Upload documents or load Wikipedia articles to ask questions and receive context-aware answers.
 
-![Upload Interface](ss/upload.jpg)
-![Chat Interface](ss/chat.jpg)
+![Upload File Interface](ss/upload.png)
+![Chat Interface](ss/chat.png)
 
 ## Features
 
@@ -89,4 +89,5 @@ GET  /api/status                    System status
 
 - Google Gemini API: https://ai.google.dev/
 - FastAPI: https://fastapi.tiangolo.com/
+
 
