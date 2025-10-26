@@ -2,8 +2,8 @@
 
 A Retrieval-Augmented Generation chat system powered by Google Gemini AI. Upload documents or load Wikipedia articles to ask questions and receive context-aware answers.
 
-![Upload Interface](upload.jpg)
-![Chat Interface](chat.jpg)
+![Upload Interface](ss/upload.jpg)
+![Chat Interface](ss/chat.jpg)
 
 ## Features
 
@@ -29,12 +29,6 @@ Windows:
 ```bash
 python -m venv venv
 venv\Scripts\activate
-```
-
-macOS/Linux:
-```bash
-python3 -m venv venv
-source venv/bin/activate
 ```
 
 ### 2. Install Dependencies
@@ -89,51 +83,10 @@ GET  /api/history                   Retrieve chat history
 GET  /api/status                    System status
 ```
 
-## Project Structure
-```
-├── app.py              FastAPI backend
-├── index.html          Main HTML file
-├── styles.css          Stylesheet
-├── script.js           Frontend logic
-├── .env               API configuration
-└── README.md          Documentation
-```
 
-## Troubleshooting
-
-**Module not found error:**
-```bash
-pip install -r requirements.txt
-```
-
-**Port already in use:**
-```bash
-uvicorn app:app --port 8001
-```
-Update `API_BASE` in `script.js` to match the new port.
-
-**CORS errors:**
-Ensure the backend is running and CORS middleware is properly configured in `app.py`.
-
-## Configuration
-
-Adjust these parameters in `app.py` for different performance characteristics:
-
-- `chunk_size`: Text chunk size (default: 500 words)
-- `overlap`: Chunk overlap (default: 50 words)
-- `top_k`: Number of chunks to retrieve (default: 3)
-
-## Requirements
-
-- Python 3.8 or higher
-- Google Gemini API key
-- Modern web browser
-
-## License
-
-MIT License
 
 ## Documentation
 
 - Google Gemini API: https://ai.google.dev/
 - FastAPI: https://fastapi.tiangolo.com/
+
