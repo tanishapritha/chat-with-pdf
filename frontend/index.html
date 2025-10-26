@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chat - AI Document Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main App -->
+    <div id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>RAG Chat</span>
+                </div>
+                <button id="newChatBtn" class="btn-icon" title="New Chat">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-upload"></i> Upload Document</h3>
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drop PDF or TXT file here</p>
+                    <input type="file" id="fileInput" accept=".pdf,.txt" hidden>
+                    <button class="btn-secondary" onclick="document.getElementById('fileInput').click()">
+                        Choose File
+                    </button>
+                </div>
+                <div id="uploadStatus" class="upload-status"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fab fa-wikipedia-w"></i> Wikipedia</h3>
+                <div class="input-group">
+                    <input type="text" id="wikiTopic" placeholder="Enter topic...">
+                    <button id="loadWikiBtn" class="btn-icon">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-history"></i> Recent Chats</h3>
+                <div id="historyList" class="history-list"></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="welcome-message">
+                        <i class="fas fa-robot"></i>
+                        <h2>Welcome to RAG Chat</h2>
+                        <p>Upload a document or load a Wikipedia page to start asking questions</p>
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <i class="fas fa-file-pdf"></i>
+                                <h4>Upload Documents</h4>
+                                <p>PDF, TXT files</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fab fa-wikipedia-w"></i>
+                                <h4>Wikipedia Search</h4>
+                                <p>Any topic</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-comments"></i>
+                                <h4>Smart Q&A</h4>
+                                <p>Context-aware answers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="document-indicator" id="docIndicator" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="docName">Document loaded</span>
+                    </div>
+                    <form id="chatForm" class="chat-input">
+                        <input 
+                            type="text" 
+                            id="questionInput" 
+                            placeholder="Ask a question about your document..." 
+                            disabled
+                        >
+                        <button type="submit" id="sendBtn" class="btn-send" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
