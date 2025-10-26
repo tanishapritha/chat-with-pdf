@@ -2,8 +2,8 @@
 
 A Retrieval-Augmented Generation chat system powered by Google Gemini AI. Upload documents or load Wikipedia articles to ask questions and receive context-aware answers.
 
-![Upload Interface](upload.png)
-![Chat Interface](chat.png)
+![Upload Interface](ss/upload.png)
+![Chat Interface](ss/chat.png)
 
 ## Features
 
@@ -81,22 +81,12 @@ Access the application at http://localhost:5500
 ## API Endpoints
 
 ```
-GET  /                              Health check
 POST /api/documents/upload          Upload document
 POST /api/documents/wikipedia       Load Wikipedia article
 POST /api/query                     Submit question
 GET  /api/history                   Retrieve chat history
 GET  /api/status                    System status
 ```
-
-## Configuration
-
-Adjust these parameters in `app.py` for different performance characteristics:
-
-- `chunk_size`: Text chunk size (default: 500 words)
-- `overlap`: Chunk overlap (default: 50 words)
-- `top_k`: Number of chunks to retrieve (default: 3)
-
 ## Requirements
 
 - Python 3.8 or higher
